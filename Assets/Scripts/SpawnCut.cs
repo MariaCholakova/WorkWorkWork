@@ -15,8 +15,6 @@ public class SpawnCut : MonoBehaviour
     PlayableDirector Director;
     public TimelineAsset LogSpawn;
     public TimelineAsset LogCut;
-    float timeCut = 0;
-    float timelineEnded = 3f;
 
     private BoxCollider logCollider;
     // Start is called before the first frame update
@@ -30,17 +28,14 @@ public class SpawnCut : MonoBehaviour
     public void inceaseCuts()
     {
         cuts++;
-        timeCut = Time.time;
         Director.playableAsset = LogCut;
         Director.Play();
-        Debug.LogError("LogCut");
 
-        //StartCoroutine(PlayLogSpawn());
-
-        if (cuts >= cutsRequired)
+        if (cuts > cutsRequired)
         { 
             GameManager.instance.backToGame();
             ScoreManager.instance.UpdateScore(10);
+            cuts = 0;
         }
 
     }
@@ -49,16 +44,6 @@ public class SpawnCut : MonoBehaviour
         var randomPosX = Random.Range(logCollider.bounds.min.x, logCollider.bounds.max.x);
         var position = new Vector3(randomPosX, transform.position.y, transform.position.z);
         Instantiate(cut, position, transform.rotation, transform.parent);
-    }
-
-    private IEnumerator PlayLogSpawn()
-    {
-        yield return new WaitForSeconds(timelineEnded);
-
-        Director.playableAsset = LogSpawn;
-        Director.Play();
-
-        Debug.LogError("LogSpawn");
     }
 
 

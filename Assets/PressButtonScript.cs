@@ -67,6 +67,7 @@ public class PressButtonScript : MonoBehaviour
             {
                 GameManager.instance.backToGame();
                 ScoreManager.instance.UpdateScore(10);
+                remainingPresses = 10;
             }
 
         }

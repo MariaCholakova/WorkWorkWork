@@ -43,8 +43,9 @@ public class Basket : MonoBehaviour
     {
         Destroy(egg.gameObject);
         catchesCount++;
-        if (catchesCount > 5)
+        if (catchesCount >= 5)
         {
+            catchesCount = 0;
             GameManager.instance.backToGame();
             ScoreManager.instance.UpdateScore(10);
         }
