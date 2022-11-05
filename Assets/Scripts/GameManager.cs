@@ -66,5 +66,11 @@ public class GameManager : MonoBehaviour
         mainCamera.SetActive(false);
         objToDestroy = toDestroy;
     }
+
+    public void UpdateScore(int points)
+    {
+        score += points;
+        scoreText.text = "SCORE: " + score;
+    }
 }
 
