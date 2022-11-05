@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    //public GameObject gameOverPanel;
     
     private const double TIME_TO_PLAY = 180; // 180 seconds
     private double timeSpent = 0;
@@ -36,31 +36,19 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
-    {
-        //timeSpentText.text = "TIME: " + timeSpent;
-        //scoreText.text = "SCORE: " + score;
-    }
-
-    public void UpdateScore(int points)
-    {
-        score += points;
-        scoreText.text = "SCORE: " + score;
-    }
-
     private void GameOver()
     {
-        gameOverPanel.SetActive(true);
+        //gameOverPanel.SetActive(true);
     }
 
     public void Play()
     {
-        SceneManager.LoadScene("Game");
+        //SceneManager.LoadScene("Game");
     }
 
     public void Quit()
     {
-        SceneManager.LoadScene("StartMenu");
+        //SceneManager.LoadScene("StartMenu");
     }
 
     public void backToGame() 
