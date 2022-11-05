@@ -7,6 +7,8 @@ public class SpawnCut : MonoBehaviour
 
     public GameObject log;
     public GameObject cut;
+    public int cutsRequired = 3;
+    private int cuts = 0;
 
     private BoxCollider logCollider;
     // Start is called before the first frame update
@@ -16,6 +18,16 @@ public class SpawnCut : MonoBehaviour
         spawnCut();
     }
 
+    public void inceaseCuts()
+    {
+        cuts++;
+        if (cuts >= cutsRequired)
+        {
+            GameManager.instance.backToGame();
+            GameManager.instance.UpdateScore(10);
+        }
+
+    }
     public void spawnCut()
     {
         var randomPosX = Random.Range(logCollider.bounds.min.x, logCollider.bounds.max.x);

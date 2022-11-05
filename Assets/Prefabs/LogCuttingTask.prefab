@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1856204061
 Transform:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &925668205524789940
 Transform:
   m_ObjectHideFlags: 0
@@ -464,7 +464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnCutObj: {fileID: 321885982298582272}
-  cutsRequired: 3
 --- !u!1 &321885981945937533
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,3 +713,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: {fileID: 321885982175797905}
   cut: {fileID: 321885981249331799}
+  destroyedTrees: {fileID: 0}
+  cutsRequired: 3

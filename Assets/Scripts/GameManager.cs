@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public bool miniGameCompleted = false;
     //public GameObject gameOverPanel;
 
     void Awake()
@@ -37,6 +36,21 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         //SceneManager.LoadScene("StartMenu");
+    }
+
+    public void backToGame() 
+    {
+        eggGame.SetActive(false);
+        logGame.SetActive(false);
+        mainCamera.SetActive(true);
+        Destroy(objToDestroy);
+    }
+
+    public void playGame(GameObject game, GameObject toDestroy) 
+    {
+        game.SetActive(true);
+        mainCamera.SetActive(false);
+        objToDestroy = toDestroy;
     }
 }
 

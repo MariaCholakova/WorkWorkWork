@@ -45,7 +45,7 @@ public class Basket : MonoBehaviour
         catchesCount++;
         if (catchesCount > 5)
         {
-            GameManager.instance.miniGameCompleted = true;
+            GameManager.instance.backToGame();
             ScoreManager.instance.UpdateScore(10);
         }
     }
