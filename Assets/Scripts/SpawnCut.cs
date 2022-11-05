@@ -7,7 +7,6 @@ public class SpawnCut : MonoBehaviour
 
     public GameObject log;
     public GameObject cut;
-    public GameObject destroyedTrees;
     public int cutsRequired = 3;
     private int cuts = 0;
 
@@ -24,7 +23,6 @@ public class SpawnCut : MonoBehaviour
         cuts++;
         if (cuts >= cutsRequired)
         {
-            Destroy(destroyedTrees);
             GameManager.instance.backToGame();
             GameManager.instance.UpdateScore(10);
         }

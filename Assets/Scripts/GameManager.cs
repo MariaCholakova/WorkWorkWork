@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject mainCamera;
     public GameObject eggGame;
     public GameObject logGame;
+    private GameObject objToDestroy;
 
     void Awake()
     {
@@ -66,12 +67,14 @@ public class GameManager : MonoBehaviour
         eggGame.SetActive(false);
         logGame.SetActive(false);
         mainCamera.SetActive(true);
+        Destroy(objToDestroy);
     }
 
-    public void playGame(GameObject game) 
+    public void playGame(GameObject game, GameObject toDestroy) 
     {
         game.SetActive(true);
         mainCamera.SetActive(false);
+        objToDestroy = toDestroy;
     }
 }
 
