@@ -1150,7 +1150,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7022139149122900994}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7022139149122900996
+--- !u!95 &239039910
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ Animator:
   m_GameObject: {fileID: 7904608479260223827}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a3cc46848d042494f8708933713e5be9, type: 2}
+  m_Controller: {fileID: 9100000, guid: c602ba1e52e1e41439f0f0c3ff8ab20b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1486,7 +1486,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7022139149384016256}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7022139148886807251
+--- !u!95 &942273397
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -1496,7 +1496,7 @@ Animator:
   m_GameObject: {fileID: 7904608479521332433}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a3cc46848d042494f8708933713e5be9, type: 2}
+  m_Controller: {fileID: 9100000, guid: b4aafc1a365b9f341b09a7bc6a4ab8f7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
