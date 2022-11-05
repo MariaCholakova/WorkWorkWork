@@ -6,7 +6,9 @@ public class Cutting : MonoBehaviour
 {
 
     public GameObject spawnCutObj;
+    public int cutsRequired = 3;
     private SpawnCut spawnCut;
+    private int currentCuts = 0;
 
     void Start()
     {
@@ -17,6 +19,11 @@ public class Cutting : MonoBehaviour
     {
         if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space)) 
         {
+            currentCuts++;
+            if (currentCuts >= cutsRequired) 
+            {
+                
+            }
             spawnCut.spawnCut();
             Destroy(gameObject);
         }
