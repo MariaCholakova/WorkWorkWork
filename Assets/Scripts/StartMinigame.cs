@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class StartMinigame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject minigame;
+    public GameObject mainCamera;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        minigame.GetComponentInChildren<Camera>(true).gameObject.SetActive(true);
+        mainCamera.SetActive(false);
     }
 }
