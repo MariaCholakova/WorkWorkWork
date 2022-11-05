@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject mainCamera;
     public GameObject eggGame;
     public GameObject logGame;
+    public GameObject cowGame;
     private GameObject objToDestroy;
 
     void Awake()
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
     {
         eggGame.SetActive(false);
         logGame.SetActive(false);
+        cowGame.SetActive(false);
         mainCamera.SetActive(true);
         Destroy(objToDestroy);
     }

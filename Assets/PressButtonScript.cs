@@ -2,6 +2,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Unity.VisualScripting;
+using static UnityEngine.ParticleSystem;
 
 public class PressButtonScript : MonoBehaviour
 {
@@ -16,24 +18,36 @@ public class PressButtonScript : MonoBehaviour
     public Color wrongColor;
     public float fadeOutTime;
 
-    public int remainingPresses = 20;
+    public int remainingPresses = 10;
 
     private Tween fadeOutTween;
 
 	private string currentRequiredKey;
+
+    private Animator animator;
+    private ParticleSystem particle1;
+    private ParticleSystem particle2;
 
 	public void Start()
 	{
         currentColor = normalColor;
 		currentRequiredKey = SelectRandomCharacter();
 		SetText(currentRequiredKey);
-	}
+        animator =  transform.Find("Pref_Udders").GetComponent<Animator>();
+        var particles = GetComponentsInChildren<ParticleSystem>();
+        particle1 = particles[0];
+        particle2 = particles[1];
+
+    }
 
     public void Update() {
         if (!Input.anyKeyDown) return;
 
 		if (remainingPresses > 0 && Input.GetKeyDown(currentRequiredKey.ToString()))
-        {   
+        {
+            animator.SetTrigger("MilkedRight");
+            particle1.Play();
+            particle2.Play();
             currentRequiredKey = SelectRandomCharacter();
             SetText(currentRequiredKey);
             remainingPresses -= 1;
@@ -48,6 +62,12 @@ public class PressButtonScript : MonoBehaviour
                 normalColor,
                 fadeOutTime
             );
+
+            if (remainingPresses <= 0) 
+            {
+                GameManager.instance.backToGame();
+                GameManager.instance.UpdateScore(10);
+            }
 
         }
         else
