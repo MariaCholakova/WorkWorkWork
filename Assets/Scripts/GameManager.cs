@@ -6,15 +6,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    //public GameObject gameOverPanel;
     
-    private const double TIME_TO_PLAY = 180; // 180 seconds
-    private double timeSpent = 0;
-    public Text timeSpentText;
-    private int score = 0;
-    public Text scoreText;
-    public Text highScoreText;
     public GameObject gameOverPanel;
+    public GameObject gameWinPanel;
+    
     public GameObject mainCamera;
     public GameObject eggGame;
     public GameObject logGame;
