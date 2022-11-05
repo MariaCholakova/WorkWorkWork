@@ -6,16 +6,32 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+    
     private const double TIME_TO_PLAY = 180; // 180 seconds
     private double timeSpent = 0;
     public Text timeSpentText;
     private int score = 0;
     public Text scoreText;
     public Text highScoreText;
-    
+    public bool miniGameCompleted = false;
     public GameObject gameOverPanel;
-    
-    // Start is called before the first frame update
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         timeSpentText.text = "TIME: " + timeSpent;
