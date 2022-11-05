@@ -67,10 +67,5 @@ public class GameManager : MonoBehaviour
         objToDestroy = toDestroy;
     }
 
-    public void UpdateScore(int points)
-    {
-        score += points;
-        scoreText.text = "SCORE: " + score;
-    }
 }
 

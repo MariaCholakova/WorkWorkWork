@@ -66,7 +66,7 @@ public class PressButtonScript : MonoBehaviour
             if (remainingPresses <= 0) 
             {
                 GameManager.instance.backToGame();
-                GameManager.instance.UpdateScore(10);
+                ScoreManager.instance.UpdateScore(10);
             }
 
         }
