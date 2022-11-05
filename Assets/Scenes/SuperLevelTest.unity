@@ -2921,11 +2921,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LogCuttingTask
       objectReference: {fileID: 0}
-    - target: {fileID: 321885982298582274, guid: 833ab6f4ae27ab94baa7dce1a53f6f17,
+    - target: {fileID: 321885980790483625, guid: 833ab6f4ae27ab94baa7dce1a53f6f17,
         type: 3}
-      propertyPath: destroyedTrees
-      value: 
-      objectReference: {fileID: 92071346}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 925668205524789940, guid: 833ab6f4ae27ab94baa7dce1a53f6f17,
         type: 3}
       propertyPath: m_RootOrder
@@ -2979,6 +2979,37 @@ PrefabInstance:
     - target: {fileID: 925668205524789940, guid: 833ab6f4ae27ab94baa7dce1a53f6f17,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893430239924841450, guid: 833ab6f4ae27ab94baa7dce1a53f6f17,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893430239924841450, guid: 833ab6f4ae27ab94baa7dce1a53f6f17,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837582651702256179, guid: 833ab6f4ae27ab94baa7dce1a53f6f17,
+        type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 769f99a02e73d134a8fbf1edc86c14d5,
+        type: 2}
+    - target: {fileID: 5837582651702256179, guid: 833ab6f4ae27ab94baa7dce1a53f6f17,
+        type: 3}
+      propertyPath: m_DirectorUpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524735931753363700, guid: 833ab6f4ae27ab94baa7dce1a53f6f17,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524735931753363700, guid: 833ab6f4ae27ab94baa7dce1a53f6f17,
+        type: 3}
+      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
