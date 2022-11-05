@@ -7,16 +7,20 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-
-    private const float TIME_TO_PLAY = 180f; // 180 seconds
+    public GameObject GameOverPrefab;
+    private const float TIME_TO_PLAY = 45f; // 180 seconds
     private float timeLeft = 0f;
     public TMP_Text timeLeftText;
     private int score = 0;
     public TMP_Text scoreText;
 
+    private float elapsedTime = 0f;
+
     void Awake()
     {
         instance = this;
+        GameOverPrefab.SetActive(false);
+
     }
 
     string FormatTime(float timeInSeconds)
@@ -34,8 +38,12 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        timeLeft = TIME_TO_PLAY - Time.time;
+        elapsedTime += Time.deltaTime;
+
+        timeLeft = TIME_TO_PLAY - elapsedTime;
         timeLeftText.text = "TIME LEFT: " + FormatTime(Mathf.Floor(timeLeft));
+
+        GameOverPrefab.SetActive(timeLeft < 0);
     }
 
     public void UpdateScore(int points)
