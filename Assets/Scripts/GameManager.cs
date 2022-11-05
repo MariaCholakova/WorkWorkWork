@@ -14,8 +14,10 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     public Text scoreText;
     public Text highScoreText;
-    public bool miniGameCompleted = false;
     public GameObject gameOverPanel;
+    public GameObject mainCamera;
+    public GameObject eggGame;
+    public GameObject logGame;
 
     void Awake()
     {
@@ -34,8 +36,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        timeSpentText.text = "TIME: " + timeSpent;
-        scoreText.text = "SCORE: " + score;
+        //timeSpentText.text = "TIME: " + timeSpent;
+        //scoreText.text = "SCORE: " + score;
     }
 
     public void UpdateScore(int points)
@@ -57,6 +59,19 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         SceneManager.LoadScene("StartMenu");
+    }
+
+    public void backToGame() 
+    {
+        eggGame.SetActive(false);
+        logGame.SetActive(false);
+        mainCamera.SetActive(true);
+    }
+
+    public void playGame(GameObject game) 
+    {
+        game.SetActive(true);
+        mainCamera.SetActive(false);
     }
 }
 
